@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     @{meta}
     <meta charset="utf-8" />
@@ -7,18 +8,207 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=1280, user-scalable=yes" />
     <meta name="robots" content="all,follow" />
-    @{head}
-    @{favicon('favicon.ico')}
-<head>
-<body>
- 
-    <h1>@{title}</h1>
- 
-    @{template('sitemap', sitemap)}
- 
-    <div>
-        @{body}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+    <!--<script src="//ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>-->
+
+    @{head} @{favicon('favicon.ico')}
+
+    
+    
+    <style>
+        html {
+            background: white;
+        }
+        body {
+            background: black url('img/grass-w.png') center bottom repeat-x;
+        }
+        
+        header, main, footer {
+            margin: 0 auto;
+            width: 1069px; /* width of content */
+            padding-left: 300px;
+            overflow: hidden;
+        }
+        header {
+            background-image: url('img/header-w.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 391px;
+            position: relative;
+        }
+            header > nav {
+                position: absolute;
+                bottom: 0;
+            }
+        main {
+
+            
+
+            background-image: url('img/blood-w.png');
+            background-repeat: repeat-y;
+            background-position: left bottom;
+            
+            
+            margin-bottom: -200px; /* height of footer */
+            padding-bottom: 200px; /* height of footer */
+        }
+        
+        footer {
+            min-height: 200px; /* height of footer */
+            padding-top: 10px;
+        }
+        
+        footer > .social-links {
+        }
+        
+        
+        #navbar {
+            /*position: fixed;
+            top: 0;
+            right: 0;*/
+        }
+        #home, #cv, #portfolio, #projects, #contact {
+            
+        }
+        #cv, #portfolio, #projects {
+            
+            min-height: 600px;
+        }
+        #affix {
+            
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 200px;
+        }
+    </style>
+    
+    
+    <script>
+    
+        $('body').scrollspy({ target: '.navbar' });
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" id="body">
+    
+    
+    <header>
+        <nav id="navbar">
+            <ul class="nav nav-pills">
+                <li><a href="#body"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-meh-o"></i> About Me</a></li>
+                <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a></li>
+                <li><a href="#portfolio"><i class="fa fa-code"></i> Portfolio</a></li>
+                <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1><i class="fa fa-home"></i> Home</h1>
+            @{body}
+        </section>
+        <section id="about">
+            <h1><i class="fa fa-meh-o"></i> About Me</h1>
+            <p>
+                <i class="fa fa-quote-left pull-left"></i>
+                i am alive
+                <i class="fa fa-quote-right pull-right"></i>
+            </p>
+            
+        </section>
+        <section id="cv">
+            <h1><i class="fa fa-wrench"></i> CV</h1>
+            download cv link
+        </section>
+        <section id="portfolio">
+            <h1><i class="fa fa-code"></i> Portfolio</h1>
+            websites
+        </section>
+        <section id="projects">
+            <h1><i class="fa fa-gear fa-spin"></i> Projects</h1>
+        </section>
+        <section id="contact">
+            <h1><i class="fa fa-phone"></i> Contact</h1>
+            
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-comments fa-fw"></i>
+                        </span>
+                        <textarea class="form-control" rows="3" id="inputMessage" placeholder="Enter message"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-exclamation fa-spin fa-fw"></i>Submit</button>
+                    <button type="reset" class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i>Clear</button>
+                </div>
+            </form>
+        </section>
+    </main>
+   
+    <footer>
+        <div class="row">
+             &copy; 1953 - 2014 Killbot Logic
+            <div class="social-links">
+              <div class="btn-group btn-group-xs">
+                        <a href="http://www.github.com/" class="btn btn-default">
+                            <i class="fa fa-github-square fa-2x fa-fw"></i>
+                        </a>
+           
+                        <a href="http://www.linkedin.com/" class="btn btn-default">
+                            <i class="fa fa-linkedin-square fa-2x fa-fw"></i>
+                        </a>
+                  
+                        <a href="http://www.facebook.com/" class="btn btn-default">
+                            <i class="fa fa-facebook-square fa-2x fa-fw"></i>
+                        </a>
+             
+                </div>
+     
+            </div>
+      
+        </div>
+        
+        
+    </footer>
+    <div data-spy="affix" data-offset-top="0" data-offset-bottom="20" id="affix">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#body"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa fa-meh-o"></i> About Me</a></li>
+            <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a></li>
+            <li><a href="#portfolio"><i class="fa fa-code"></i> Portfolio</a></li>
+            <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a></li>
+            <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
+        </ul>
     </div>
- 
+    
 </body>
+
 </html>
