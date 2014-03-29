@@ -58,23 +58,15 @@
 
             background-image: url('img/blood-w.png');
             background-repeat: repeat-y;
-            background-position: left bottom;
+            background-position: 0 0;
 
             margin-bottom: -200px; /* height of footer */
             padding-bottom: 200px; /* height of footer */
         }
 
-        footer {
+        footer#footer {
             min-height: 200px; /* height of footer */
             padding-top: 10px;
-        }
-
-       
-
-        #navbar {
-            /*position: fixed;
-            top: 0;
-            right: 0;*/
         }
         #home, #cv, #portfolio, #projects, #contact {
 
@@ -109,6 +101,10 @@
         {
             0%   {background-position: 0 bottom;}
             100% {background-position: 307px bottom;}
+        }
+
+        .jumbotron {
+            background-color: black;
         }
     </style>
 
@@ -145,10 +141,6 @@
         @{body}
     </section>
     <section id="about">
-
-
-
-
         <div class="jumbotron">
             <h1><i class="fa fa-bug"></i> About Me</h1>
 
@@ -172,6 +164,186 @@
     </section>
     <section id="cv">
         <h1><i class="fa fa-wrench"></i> CV</h1>
+
+        <h2>Education</h2>
+
+
+        <h2>Employment History</h2>
+        <dl class="dl-horizontal">
+            <dt>June 2012 – Now</dt>
+            <dd>
+                <address>
+                    <strong>ACS Foundation</strong><br/>
+                    Level 11, 50 Carrington St<br/>
+                    Sydney NSW 2000<br/>
+                    <abbr title="Website">W:</abbr> <a
+                        href="http://www.acsfoundation.com.au/">acsfoundation.com.au</a><br/>
+                    <abbr title="Phone">P:</abbr> (02) 8296-4443
+                </address>
+                <ul>
+                    <li>Was part of a team that redesigned the ACS Foundation website</li>
+                    <li>Rewrote the whole codebase and normalized the database for fun</li>
+                    <li>Created the Big Day In website for them</li>
+                    <li>Maintain all their software including their current website and maintain their CRUD database
+                        applications
+                    </li>
+                </ul>
+            </dd>
+            <dt>September 2012 – Now</dt>
+            <dd>
+                <address>
+                    <strong>CBD Storage</strong><br/>
+                    Level Parking 6<br/>
+                    680 George Street<br/>
+                    <abbr title="Website">W:</abbr> <a href="http://www.cbdstorage.com.au/">cbdstorage.com.au</a><br/>
+                    <abbr title="Phone">P:</abbr> (02) 9283-2220
+                </address>
+                <ul>
+                    <li>Maintain IT systems and servers</li>
+                    <li>Maintain and installed software, servers for 25 cameras over a 6 storey car park</li>
+                    <li>Develop all their software including their current website and their in house Self Storage
+                        Management database application in ASP.NET
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <h2>Academic Record
+            <small>B. Eng. @ University of Technology, Sydney</small>
+        </h2>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">B. Eng. @ University of Technology, Sydney</div>
+            <div class="panel-body">
+                <p>
+                    Degree is currently on a Credit – Distinction average
+                    Bachelor of Engineering (Computer Systems), Diploma in Engineering Practice
+                    download transcript here
+                </p>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Semester</th>
+                    <th>Subject</th>
+                    <th>Result</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr class="">
+                    <td rowspan="1" class="">Spring 2010</td>
+                    <td>Object-oriented Programming</td>
+                    <td>High Distinction (98)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="3" class="">Autumn 2011</td>
+                    <td>Introduction to ICT Engineering</td>
+                    <td>High Distinction (86)</td>
+                </tr>
+                <tr class="">
+                    <td>Foundation Mathematics</td>
+                    <td>Credit (67)</td>
+                </tr>
+                <tr class="">
+                    <td>Engineering Communication</td>
+                    <td>Distinction (82)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="4" class="">Spring 2011</td>
+                    <td>Object-oriented Design</td>
+                    <td>Pass (60)</td>
+                </tr>
+                <tr class="">
+                    <td>Introductory Digital Systems</td>
+                    <td>Distinction (81)</td>
+                </tr>
+                <tr class="">
+                    <td>Introduction to Electrical Engineering</td>
+                    <td>Credit (68)</td>
+                </tr>
+                <tr class="">
+                    <td>Network Fundamentals</td>
+                    <td>Credit (66)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="2" class="">Autumn 2012</td>
+                    <td>Mathematical Modelling 1</td>
+                    <td>Distinction (76)</td>
+                </tr>
+                <tr class="">
+                    <td>Engineering Practice Preview 1</td>
+                    <td>Distinction (76)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="1" class="">Spring 2012</td>
+                    <td>Engineering Experience 1</td>
+                    <td>Pass (Not Graded)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="1" class="">Autumn 2013</td>
+                    <td>Embedded C</td>
+                    <td>High Distinction (87)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="1" class="">Spring 2013</td>
+                    <td>Mathematical Modelling 2</td>
+                    <td>Credit (69)</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="1" class="">Summer 2013</td>
+                    <td>Engineering Practice Review</td>
+                    <td>Current</td>
+                </tr>
+
+                <tr class="">
+                    <td rowspan="4" class="">Autumn 2014</td>
+                    <td>Design and Innovation Fundamentals</td>
+                    <td>Current</td>
+                </tr>
+                <tr class="">
+                    <td>Advanced Digital Systems</td>
+                    <td>Current</td>
+                </tr>
+                <tr class="">
+                    <td>Mechatronics 2</td>
+                    <td>Current</td>
+                </tr>
+                <tr class="">
+                    <td>Physical Modelling</td>
+                    <td>Current</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <blockquote class="blockquote-reverse">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>
+                Someone famous in <cite title="Source Title">Source Title</cite>
+            </footer>
+        </blockquote>
+        <address>
+            <strong>Andy Truong</strong><br>
+            <a href="mailto:#">number42@killbotlogic.com</a>
+        </address>
+
+
+        <dl class="dl-horizontal">
+            <dt>Mobile</dt>
+            <dd>...</dd>
+            <dt>Email</dt>
+            <dd>...</dd>
+        </dl>
+
+        <p class="lead">what the fuck up</p>
 
     </section>
     <section id="portfolio">
@@ -233,8 +405,8 @@
     </section>
 </main>
 
-<footer>
-    <div class="row">
+<footer id="footer">
+<div class="row">
         <div class="col-md-8">
 
 
@@ -278,13 +450,12 @@
 
 
     </ul>
-    <div class="back-to-top">
-        <a href="#top" class="btn btn-sm">
-            Back to top <i class="fa fa-reply fa-1x fa-rotate-90"></i>
+
+    <div class="navbar-text">
+        <a href="#top" class="navbar-link">
+            <i class="fa fa-reply fa-1x fa-rotate-90"></i> Back to top
         </a>
     </div>
-
-
 </div>
 
 </body>
