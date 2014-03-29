@@ -10,7 +10,7 @@
     <meta name="robots" content="all,follow"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -29,9 +29,12 @@
         html {
             background: white;
         }
-
         body {
             background: black url('img/grass-w.png') center bottom repeat-x;
+
+            -webkit-animation: slide 10s linear infinite;
+               -moz-animation: slide 10s linear infinite;
+                    animation: slide 10s linear infinite;
         }
 
         header, main, footer {
@@ -40,7 +43,6 @@
             padding-left: 300px;
             overflow: hidden;
         }
-
         header {
             background-image: url('img/header-w.png');
             background-repeat: no-repeat;
@@ -48,12 +50,10 @@
             min-height: 391px;
             position: relative;
         }
-
-        header > nav {
-            position: absolute;
-            bottom: 0;
-        }
-
+            header > nav {
+                position: absolute;
+                bottom: 0;
+            }
         main {
 
             background-image: url('img/blood-w.png');
@@ -76,11 +76,9 @@
             top: 0;
             right: 0;*/
         }
-
         #home, #cv, #portfolio, #projects, #contact {
 
         }
-
         #cv, #portfolio, #projects {
 
             min-height: 600px;
@@ -94,7 +92,23 @@
             width: 200px;
         }
 
-        #side-navbar .back-to-top > a {
+
+        @-webkit-keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
+        }​
+
+        @-moz-keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
+        }
+
+        @keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
         }
     </style>
 
@@ -128,8 +142,6 @@
 <main>
     <section id="home">
         <h1><i class="fa fa-home"></i> Home</h1>
-
-
         @{body}
     </section>
     <section id="about">
