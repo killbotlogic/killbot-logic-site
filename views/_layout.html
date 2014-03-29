@@ -32,6 +32,10 @@
         }
         body {
             background: black url('img/grass-w.png') center bottom repeat-x;
+            
+            -webkit-animation: slide 10s linear infinite;
+               -moz-animation: slide 10s linear infinite;
+                    animation: slide 10s linear infinite;
         }
         
         header, main, footer {
@@ -91,6 +95,25 @@
             right: 0;
             top: 0;
             width: 200px;
+        }
+        
+
+        @-webkit-keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
+        }​
+
+        @-moz-keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
+        }
+
+        @keyframes slide
+        {
+            0%   {background-position: 0 bottom;}
+            100% {background-position: 307px bottom;}
         }
     </style>
     
