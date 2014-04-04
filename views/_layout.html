@@ -13,13 +13,12 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <!--<script src="//ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>-->
     @{js('skrollr.min.js')} @{head} @{favicon('favicon.ico')}
 
@@ -53,7 +52,6 @@
             /*-webkit-animation: slide 10s linear infinite;
             -moz-animation: slide 10s linear infinite;
             animation: slide 10s linear infinite;*/
-            
             font-size: 18px;
             font-weight: 400;
         }
@@ -63,9 +61,6 @@
             /* width of content */
             padding-left: 300px;
             overflow: hidden;
-            background-image: url('img/blood-w.png');
-            background-repeat: repeat-y;
-            background-position: left bottom;
         }
         header {
             min-height: 391px;
@@ -79,40 +74,21 @@
             bottom: 0;
         }
         main {
-<<<<<<< HEAD
+            background-image: url('img/blood-w.png');
+            background-repeat: repeat-y;
+            background-position: left bottom;
             margin-bottom: -200px;
             /* height of footer */
             padding-bottom: 200px;
             /* height of footer */
         }
-        footer {
+        footer#footer {
             min-height: 200px;
             /* height of footer */
             padding-top: 10px;
         }
-        #navbar {
-            /*position: fixed;
-            top: 0;
-            right: 0;*/
-        }
-=======
-
-            background-image: url('img/blood-w.png');
-            background-repeat: repeat-y;
-            background-position: 0 0;
-
-            margin-bottom: -200px; /* height of footer */
-            padding-bottom: 200px; /* height of footer */
-        }
-
-        footer#footer {
-            min-height: 200px; /* height of footer */
-            padding-top: 10px;
-        }
->>>>>>> b6ca83febb3fbd6ee2324efdafb5632e8bafc9bf
         #home, #cv, #portfolio, #projects, #contact {
         }
-     
         #side-navbar {
             position: fixed;
             left: 0;
@@ -143,34 +119,9 @@
                 background-position: 307px bottom;
             }
         }
-        /*
-        .monster-1 {
-            background-image: url('img/monsters.png');
-            background-position: -700px 0px;
-            width: 200px;
-            height: 195px;
-        }
-        .grass-muncher {
-            left: 0;
-            bottom: -100px;
-            position: fixed;
-        }
-        @keyframes walk {
-            from {
-                background: red;
-            }
-            to {
-                background: yellow;
-            }
-        }
-<<<<<<< HEAD
-        */
-=======
-
         .jumbotron {
             background-color: black;
         }
->>>>>>> b6ca83febb3fbd6ee2324efdafb5632e8bafc9bf
     </style>
 
 
@@ -211,37 +162,36 @@
 
 
                 <h1><i class="fa fa-bug"></i> About Me</h1>
-<div class="jumbotron">
-                <p>
-                    <i class="fa fa-quote-left pull-left"></i>
-                    Hi my name is Andy Truong and I like to make stuff that sometimes work.
-                    If I had all the time in the world I would resynthesize the proofs of all the mathematical equations that model our world. 
-                    That is the kind of person I am, <b>an adrenaline junkie!</b> I am currently 
-                    completing my <b>Bachelors in Software Engineering</b> at the <b>University of Technology, Sydney</b>.
-                    <i class="fa fa-quote-right pull-right"></i>
-                </p>
-                <dl class="dl-horizontal">
-                    <dt><i class="fa fa-envelope"></i> Email:</dt>
-                    <dd>iamnumber42 <i class="fa fa-bolt"></i> killbotlogic.com</dd>
-                    <dt><i class="fa fa-phone"></i> Phone:</dt>
-                    <dd>0466 489 205</dd>
-                </dl>
-                <p><a class="btn btn-primary btn-lg" role="button" href="#cv">Learn more</a>
-                </p>
-</div>
+                <div class="jumbotron">
+                    <p>
+                        <i class="fa fa-quote-left pull-left"></i>
+                        Hi my name is Andy Truong and I like to make stuff that sometimes work. If I had all the time in the world I would resynthesize the proofs of all the mathematical equations that model our world. That is the kind of person I am, <b>an adrenaline junkie!</b> I am currently completing my <b>Bachelors in Software Engineering</b> at the <b>University of Technology, Sydney</b>.
+                        <i class="fa fa-quote-right pull-right"></i>
+                    </p>
+                    <dl class="dl-horizontal">
+                        <dt><i class="fa fa-envelope"></i> Email:</dt>
+                        <dd>iamnumber42 <i class="fa fa-bolt"></i> killbotlogic.com</dd>
+                        <dt><i class="fa fa-phone"></i> Phone:</dt>
+                        <dd>0466 489 205</dd>
+                    </dl>
+                    <p><a class="btn btn-primary btn-lg" role="button" href="#cv">Learn more</a>
+                    </p>
+                </div>
+
+           
             </section>
             <section id="cv">
-                
-                    <h1><i class="fa fa-wrench"></i> CV </h1>
 
-                    <p>
-                        @{download('CV - Public.docx', 'Download CV', 'Andy Truong CV', 'btn btn-primary btn-lg')};
-                    </p>
+                <h1><i class="fa fa-wrench"></i> CV </h1>
 
-                    <p>
-                        @{download('Online Student Record.pdf', 'Download Academic Transcript', 'Andy Truong Academic Transcript', 'btn btn-primary btn-lg')};
-                    </p>
-                
+                <p>
+                    @{download('CV - Public.docx', 'Download CV', 'Andy Truong CV', 'btn btn-primary btn-lg')}
+                </p>
+
+                <p>
+                    @{download('Online Student Record.pdf', 'Download Academic Transcript', 'Andy Truong Academic Transcript', 'btn btn-primary btn-lg')}
+                </p>
+
 
 
             </section>
@@ -263,18 +213,18 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="/img/screenshots/acsfoundation.png" alt="ACS Foundation">
+                            <img src="img/screenshots/acsfoundation.png" alt="ACS Foundation">
                             <div class="carousel-caption well">
                                 <h3>
                                     ACS Foundation 
                                     <br /> 
                                     <a href="http://www.acsfoundation.com.au/" target="_blank">www.acsfoundation.com.au</a>
                                 </h3>
-                                
+
                             </div>
                         </div>
                         <div class="item">
-                            <img src="/img/screenshots/cbdstorage.png" alt="CBD Storage">
+                            <img src="img/screenshots/cbdstorage.png" alt="CBD Storage">
                             <div class="carousel-caption well">
                                 <h3>
                                     CBD Storage
@@ -284,7 +234,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="/img/screenshots/sydneystoragelockers.png" alt="Sydney Storage Lockers">
+                            <img src="img/screenshots/sydneystoragelockers.png" alt="Sydney Storage Lockers">
                             <div class="carousel-caption well">
                                 <h3>
                                     Sydney Storage Lockers
@@ -294,7 +244,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="/img/screenshots/thebigdayin.png" alt="The BiG Day In">
+                            <img src="img/screenshots/thebigdayin.png" alt="The BiG Day In">
                             <div class="carousel-caption well">
                                 <h3>
                                     The BiG Day In
@@ -304,7 +254,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="/img/screenshots/documentstoragemanagement.png" alt="Document Storage Management">
+                            <img src="img/screenshots/documentstoragemanagement.png" alt="Document Storage Management">
                             <div class="carousel-caption well">
                                 <h3>
                                     Document Storage Management
@@ -324,274 +274,20 @@
                     </a>
                 </div>
 
-<<<<<<< HEAD
+
 
             </section>
             <section id="projects">
                 <div class="page-header">
                     <h1><i class="fa fa-gear fa-spin"></i> Projects <small>I am working on right now</small></h1>
-=======
-<header id="top">
-    <nav id="navbar">
-        <ul class="nav nav-pills">
-            <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fa fa-bug"></i> About Me</a></li>
-            <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a></li>
-            <li><a href="#portfolio"><i class="fa fa-code"></i> Portfolio</a></li>
-            <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="home">
-        <h1><i class="fa fa-home"></i> Home</h1>
-        @{body}
-    </section>
-    <section id="about">
-        <div class="jumbotron">
-            <h1><i class="fa fa-bug"></i> About Me</h1>
-
-            <p>
-                <i class="fa fa-quote-left pull-left"></i>
-                Suppose, for instance, that the notion of level of grammaticalness delimits a
-                general convention regarding the forms of the grammar. Presumably, the speaker-hearer's
-                linguistic intuition does not affect the structure of a corpus of utterance tokens upon which
-                conformity has been defined by the paired utterance test. Note that any associated supporting
-                element is not subject to an abstract underlying order. Let us continue to suppose that the
-                appearance of parasitic gaps in domains relatively inaccessible to ordinary extraction is
-                necessary to impose an interpretation on the extended c-command discussed in connection
-                with (34). Clearly, the systematic use of complex symbols suffices to account for the
-                traditional practice of grammarians.
-                <i class="fa fa-quote-right pull-right"></i>
-            </p>
-
-            <p><a class="btn btn-primary btn-lg" role="button" href="#cv">Learn more</a></p>
-        </div>
-
-    </section>
-    <section id="cv">
-        <h1><i class="fa fa-wrench"></i> CV</h1>
-
-        <h2>Education</h2>
 
 
-        <h2>Employment History</h2>
-        <dl class="dl-horizontal">
-            <dt>June 2012 – Now</dt>
-            <dd>
-                <address>
-                    <strong>ACS Foundation</strong><br/>
-                    Level 11, 50 Carrington St<br/>
-                    Sydney NSW 2000<br/>
-                    <abbr title="Website">W:</abbr> <a
-                        href="http://www.acsfoundation.com.au/">acsfoundation.com.au</a><br/>
-                    <abbr title="Phone">P:</abbr> (02) 8296-4443
-                </address>
-                <ul>
-                    <li>Was part of a team that redesigned the ACS Foundation website</li>
-                    <li>Rewrote the whole codebase and normalized the database for fun</li>
-                    <li>Created the Big Day In website for them</li>
-                    <li>Maintain all their software including their current website and maintain their CRUD database
-                        applications
-                    </li>
-                </ul>
-            </dd>
-            <dt>September 2012 – Now</dt>
-            <dd>
-                <address>
-                    <strong>CBD Storage</strong><br/>
-                    Level Parking 6<br/>
-                    680 George Street<br/>
-                    <abbr title="Website">W:</abbr> <a href="http://www.cbdstorage.com.au/">cbdstorage.com.au</a><br/>
-                    <abbr title="Phone">P:</abbr> (02) 9283-2220
-                </address>
-                <ul>
-                    <li>Maintain IT systems and servers</li>
-                    <li>Maintain and installed software, servers for 25 cameras over a 6 storey car park</li>
-                    <li>Develop all their software including their current website and their in house Self Storage
-                        Management database application in ASP.NET
-                    </li>
-                </ul>
-            </dd>
-        </dl>
 
-        <h2>Academic Record
-            <small>B. Eng. @ University of Technology, Sydney</small>
-        </h2>
-        <div class="panel panel-primary">
-            <!-- Default panel contents -->
-            <div class="panel-heading">B. Eng. @ University of Technology, Sydney</div>
-            <div class="panel-body">
-                <p>
-                    Degree is currently on a Credit – Distinction average
-                    Bachelor of Engineering (Computer Systems), Diploma in Engineering Practice
-                    download transcript here
-                </p>
-            </div>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Semester</th>
-                    <th>Subject</th>
-                    <th>Result</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr class="">
-                    <td rowspan="1" class="">Spring 2010</td>
-                    <td>Object-oriented Programming</td>
-                    <td>High Distinction (98)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="3" class="">Autumn 2011</td>
-                    <td>Introduction to ICT Engineering</td>
-                    <td>High Distinction (86)</td>
-                </tr>
-                <tr class="">
-                    <td>Foundation Mathematics</td>
-                    <td>Credit (67)</td>
-                </tr>
-                <tr class="">
-                    <td>Engineering Communication</td>
-                    <td>Distinction (82)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="4" class="">Spring 2011</td>
-                    <td>Object-oriented Design</td>
-                    <td>Pass (60)</td>
-                </tr>
-                <tr class="">
-                    <td>Introductory Digital Systems</td>
-                    <td>Distinction (81)</td>
-                </tr>
-                <tr class="">
-                    <td>Introduction to Electrical Engineering</td>
-                    <td>Credit (68)</td>
-                </tr>
-                <tr class="">
-                    <td>Network Fundamentals</td>
-                    <td>Credit (66)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="2" class="">Autumn 2012</td>
-                    <td>Mathematical Modelling 1</td>
-                    <td>Distinction (76)</td>
-                </tr>
-                <tr class="">
-                    <td>Engineering Practice Preview 1</td>
-                    <td>Distinction (76)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="1" class="">Spring 2012</td>
-                    <td>Engineering Experience 1</td>
-                    <td>Pass (Not Graded)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="1" class="">Autumn 2013</td>
-                    <td>Embedded C</td>
-                    <td>High Distinction (87)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="1" class="">Spring 2013</td>
-                    <td>Mathematical Modelling 2</td>
-                    <td>Credit (69)</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="1" class="">Summer 2013</td>
-                    <td>Engineering Practice Review</td>
-                    <td>Current</td>
-                </tr>
-
-                <tr class="">
-                    <td rowspan="4" class="">Autumn 2014</td>
-                    <td>Design and Innovation Fundamentals</td>
-                    <td>Current</td>
-                </tr>
-                <tr class="">
-                    <td>Advanced Digital Systems</td>
-                    <td>Current</td>
-                </tr>
-                <tr class="">
-                    <td>Mechatronics 2</td>
-                    <td>Current</td>
-                </tr>
-                <tr class="">
-                    <td>Physical Modelling</td>
-                    <td>Current</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <blockquote class="blockquote-reverse">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>
-                Someone famous in <cite title="Source Title">Source Title</cite>
-            </footer>
-        </blockquote>
-        <address>
-            <strong>Andy Truong</strong><br>
-            <a href="mailto:#">number42@killbotlogic.com</a>
-        </address>
-
-
-        <dl class="dl-horizontal">
-            <dt>Mobile</dt>
-            <dd>...</dd>
-            <dt>Email</dt>
-            <dd>...</dd>
-        </dl>
-
-        <p class="lead">what the fuck up</p>
-
-    </section>
-    <section id="portfolio">
-        <h1><i class="fa fa-code"></i> Portfolio</h1>
-        websites
-    </section>
-    <section id="projects">
-
-        <div class="jumbotron">
-            <h1><i class="fa fa-gear fa-spin"></i> Projects</h1>
-
-            <p>
-                <i class="fa fa-quote-left pull-left"></i>
-                Suppose, for instance, that the notion of level of grammaticalness delimits a
-                general convention regarding the forms of the grammar. Presumably, the speaker-hearer's
-                linguistic intuition does not affect the structure of a corpus of utterance tokens upon which
-                conformity has been defined by the paired utterance test. Note that any associated supporting
-                element is not subject to an abstract underlying order. Let us continue to suppose that the
-                appearance of parasitic gaps in domains relatively inaccessible to ordinary extraction is
-                necessary to impose an interpretation on the extended c-command discussed in connection
-                with (34). Clearly, the systematic use of complex symbols suffices to account for the
-                traditional practice of grammarians.
-                <i class="fa fa-quote-right pull-right"></i>
-            </p>
-
-            <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-        </div>
-    </section>
-    <section id="contact">
-        <h1><i class="fa fa-phone"></i> Contact</h1>
-
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    <input type="text" class="form-control" id="inputName" placeholder="Enter name"/>
->>>>>>> b6ca83febb3fbd6ee2324efdafb5632e8bafc9bf
                 </div>
+
+
                 <div class="jumbotron">
-            
+
                     <ul class="media-list">
                         <li class="media">
                             <a class="pull-left" href="#">
@@ -604,7 +300,7 @@
                         </li>
                         <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="img/header.png" alt="Killbot Logic header thumbnail image" width="100">
+                                <img class="media-object" src="img/header-w.png" alt="Killbot Logic header thumbnail image" width="100">
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">This Website</h4>
@@ -648,15 +344,10 @@
             </section>
         </main>
 
-<<<<<<< HEAD
-        <footer>
+        <footer id="footer">
             <div class="row">
                 <div class="col-md-8">
-=======
-<footer id="footer">
-<div class="row">
-        <div class="col-md-8">
->>>>>>> b6ca83febb3fbd6ee2324efdafb5632e8bafc9bf
+
 
 
 
@@ -702,13 +393,13 @@
                 <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a>
                 </li>
             </ul>
-            <div class="back-to-top">
-                <a href="#top" class="btn btn-sm">
-                    Back to top <i class="fa fa-reply fa-1x fa-rotate-90"></i>
+            <div class="navbar-text">
+                <a href="#top" class="navbar-link">
+                    <i class="fa fa-reply fa-1x fa-rotate-90"></i> Back to top
                 </a>
             </div>
 
-<<<<<<< HEAD
+
         </div>
         <div id="bg" data-0="transform: translate(0px, 0px)" data-end="transform: translate(0, -60px)"></div>
         <div id="bg-overlay"></div>
@@ -722,19 +413,13 @@
                         //console.log(data.curTop);
                     }
                 });
-            })(jQuery);;
+            })(jQuery);
         </script>
-    </div>
-=======
-    </ul>
 
-    <div class="navbar-text">
-        <a href="#top" class="navbar-link">
-            <i class="fa fa-reply fa-1x fa-rotate-90"></i> Back to top
-        </a>
-    </div>
-</div>
 
->>>>>>> b6ca83febb3fbd6ee2324efdafb5632e8bafc9bf
+
+    </div>
+
 </body>
+
 </html>
