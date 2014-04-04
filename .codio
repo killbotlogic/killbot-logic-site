@@ -4,14 +4,14 @@
 // Run button configuration
     "commands": {
         "Node version": "node --version",
-        "Run": "node index.js"
+        "Run": "node index.js 8000 '0.0.0.0'"
     },
 
 // Preview button configuration
   "preview": {
         "Project Index (static)": "https://{{domain}}/{{index}}",
         "Current File (static)": "https://{{domain}}/{{filepath}}",
-        "Box URL": "http://{{domain}}:8080/",
+        "Box URL": "http://{{domain}}:8000/",
         "Box URL SSL": "https://{{domain}}:9500/"
   }
 }

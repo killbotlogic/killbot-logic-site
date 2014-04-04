@@ -3,11 +3,11 @@
 
 <head>
     @{meta}
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="viewport" content="width=1280, user-scalable=yes"/>
-    <meta name="robots" content="all,follow"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="robots" content="all,follow" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
@@ -21,221 +21,353 @@
 
     <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
     <!--<script src="//ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>-->
+    @{js('skrollr.min.js')} @{head} @{favicon('favicon.ico')}
 
-    @{head} @{favicon('favicon.ico')}
 
 
     <style>
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: #000 url("/img/background.jpg") 50% 0 no-repeat;
+            background-size: 100% auto;
+        }
+        #bg-overlay {
+            position: fixed;
+            height: 450px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #1A0017 87%);
+        }
         html {
             background: white;
         }
         body {
-            background: black url('img/grass-w.png') center bottom repeat-x;
-
-            -webkit-animation: slide 10s linear infinite;
-               -moz-animation: slide 10s linear infinite;
-                    animation: slide 10s linear infinite;
+            background: url('img/grass-w.png') center bottom repeat-x;
+            /*-webkit-animation: slide 10s linear infinite;
+            -moz-animation: slide 10s linear infinite;
+            animation: slide 10s linear infinite;*/
+            
+            font-size: 18px;
+            font-weight: 400;
         }
-
         header, main, footer {
             margin: 0 auto;
-            width: 1069px; /* width of content */
+            width: 1069px;
+            /* width of content */
             padding-left: 300px;
             overflow: hidden;
-        }
-        header {
-            background-image: url('img/header-w.png');
-            background-repeat: no-repeat;
-            background-position: center top;
-            min-height: 391px;
-            position: relative;
-        }
-            header > nav {
-                position: absolute;
-                bottom: 0;
-            }
-        main {
-
             background-image: url('img/blood-w.png');
             background-repeat: repeat-y;
             background-position: left bottom;
-
-            margin-bottom: -200px; /* height of footer */
-            padding-bottom: 200px; /* height of footer */
         }
-
+        header {
+            min-height: 391px;
+            position: relative;
+            background-image: url('img/header-w.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        header > nav {
+            position: absolute;
+            bottom: 0;
+        }
+        main {
+            margin-bottom: -200px;
+            /* height of footer */
+            padding-bottom: 200px;
+            /* height of footer */
+        }
         footer {
-            min-height: 200px; /* height of footer */
+            min-height: 200px;
+            /* height of footer */
             padding-top: 10px;
         }
-
-       
-
         #navbar {
             /*position: fixed;
             top: 0;
             right: 0;*/
         }
         #home, #cv, #portfolio, #projects, #contact {
-
         }
-        #cv, #portfolio, #projects {
-
-            min-height: 600px;
-        }
-
+     
         #side-navbar {
-
             position: fixed;
-            right: 0;
+            left: 0;
             top: 0;
             width: 200px;
         }
-
-
-        @-webkit-keyframes slide
-        {
-            0%   {background-position: 0 bottom;}
-            100% {background-position: 307px bottom;}
-        }​
-
-        @-moz-keyframes slide
-        {
-            0%   {background-position: 0 bottom;}
-            100% {background-position: 307px bottom;}
+        @-webkit-keyframes slide {
+            0% {
+                background-position: 0 bottom;
+            }
+            100% {
+                background-position: 307px bottom;
+            }
         }
-
-        @keyframes slide
-        {
-            0%   {background-position: 0 bottom;}
-            100% {background-position: 307px bottom;}
+        @-moz-keyframes slide {
+            0% {
+                background-position: 0 bottom;
+            }
+            100% {
+                background-position: 307px bottom;
+            }
         }
+        @keyframes slide {
+            0% {
+                background-position: 0 bottom;
+            }
+            100% {
+                background-position: 307px bottom;
+            }
+        }
+        /*
+        .monster-1 {
+            background-image: url('img/monsters.png');
+            background-position: -700px 0px;
+            width: 200px;
+            height: 195px;
+        }
+        .grass-muncher {
+            left: 0;
+            bottom: -100px;
+            position: fixed;
+        }
+        @keyframes walk {
+            from {
+                background: red;
+            }
+            to {
+                background: yellow;
+            }
+        }
+        */
     </style>
 
 
-    <script>
 
-        //$('body').scrollspy({ target: '.navbar' });
-        // data-spy="scroll" data-target="#navbar"
-
-        //        $('#side-navbar').scrollspy({
-        //            offset: 30
-        //        });
-    </script>
 </head>
 
 <body data-spy="scroll">
 
-
-<header id="top">
-    <nav id="navbar">
-        <ul class="nav nav-pills">
-            <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fa fa-bug"></i> About Me</a></li>
-            <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a></li>
-            <li><a href="#portfolio"><i class="fa fa-code"></i> Portfolio</a></li>
-            <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="home">
-        <h1><i class="fa fa-home"></i> Home</h1>
-        @{body}
-    </section>
-    <section id="about">
+    <div class="container">
 
 
+        <header id="top">
+            <nav id="navbar">
+                <ul class="nav nav-pills">
+                    <!--<li><a href="#home"><i class="fa fa-home"></i> Home</a>
+                    </li>-->
+                    <li><a href="#about"><i class="fa fa-bug"></i> About Me</a>
+                    </li>
+                    <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a>
+                    </li>
+                    <li><a href="#portfolio"><i class="fa fa-code"></i> Websites</a>
+                    </li>
+                    <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a>
+                    </li>
+                    <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!--<section id="home">
+                <h1><i class="fa fa-home"></i> Home</h1>
+                @{body}
+            </section>-->
+            <section id="about">
 
 
-        <div class="jumbotron">
-            <h1><i class="fa fa-bug"></i> About Me</h1>
 
-            <p>
-                <i class="fa fa-quote-left pull-left"></i>
-                Suppose, for instance, that the notion of level of grammaticalness delimits a
-                general convention regarding the forms of the grammar. Presumably, the speaker-hearer's
-                linguistic intuition does not affect the structure of a corpus of utterance tokens upon which
-                conformity has been defined by the paired utterance test. Note that any associated supporting
-                element is not subject to an abstract underlying order. Let us continue to suppose that the
-                appearance of parasitic gaps in domains relatively inaccessible to ordinary extraction is
-                necessary to impose an interpretation on the extended c-command discussed in connection
-                with (34). Clearly, the systematic use of complex symbols suffices to account for the
-                traditional practice of grammarians.
-                <i class="fa fa-quote-right pull-right"></i>
-            </p>
 
-            <p><a class="btn btn-primary btn-lg" role="button" href="#cv">Learn more</a></p>
-        </div>
+                <h1><i class="fa fa-bug"></i> About Me</h1>
+<div class="jumbotron">
+                <p>
+                    <i class="fa fa-quote-left pull-left"></i>
+                    Hi my name is Andy Truong and I like to make stuff that sometimes work.
+                    If I had all the time in the world I would resynthesize the proofs of all the mathematical equations that model our world. 
+                    That is the kind of person I am, <b>an adrenaline junkie!</b> I am currently 
+                    completing my <b>Bachelors in Software Engineering</b> at the <b>University of Technology, Sydney</b>.
+                    <i class="fa fa-quote-right pull-right"></i>
+                </p>
+                <dl class="dl-horizontal">
+                    <dt><i class="fa fa-envelope"></i> Email:</dt>
+                    <dd>iamnumber42 <i class="fa fa-bolt"></i> killbotlogic.com</dd>
+                    <dt><i class="fa fa-phone"></i> Phone:</dt>
+                    <dd>0466 489 205</dd>
+                </dl>
+                <p><a class="btn btn-primary btn-lg" role="button" href="#cv">Learn more</a>
+                </p>
+</div>
+            </section>
+            <section id="cv">
+                
+                    <h1><i class="fa fa-wrench"></i> CV </h1>
 
-    </section>
-    <section id="cv">
-        <h1><i class="fa fa-wrench"></i> CV</h1>
+                    <p>
+                        @{download('CV - Public.docx', 'Download CV', 'Andy Truong CV', 'btn btn-primary btn-lg')};
+                    </p>
 
-    </section>
-    <section id="portfolio">
-        <h1><i class="fa fa-code"></i> Portfolio</h1>
-        websites
-    </section>
-    <section id="projects">
+                    <p>
+                        @{download('Online Student Record.pdf', 'Download Academic Transcript', 'Andy Truong Academic Transcript', 'btn btn-primary btn-lg')};
+                    </p>
+                
 
-        <div class="jumbotron">
-            <h1><i class="fa fa-gear fa-spin"></i> Projects</h1>
 
-            <p>
-                <i class="fa fa-quote-left pull-left"></i>
-                Suppose, for instance, that the notion of level of grammaticalness delimits a
-                general convention regarding the forms of the grammar. Presumably, the speaker-hearer's
-                linguistic intuition does not affect the structure of a corpus of utterance tokens upon which
-                conformity has been defined by the paired utterance test. Note that any associated supporting
-                element is not subject to an abstract underlying order. Let us continue to suppose that the
-                appearance of parasitic gaps in domains relatively inaccessible to ordinary extraction is
-                necessary to impose an interpretation on the extended c-command discussed in connection
-                with (34). Clearly, the systematic use of complex symbols suffices to account for the
-                traditional practice of grammarians.
-                <i class="fa fa-quote-right pull-right"></i>
-            </p>
+            </section>
+            <section id="portfolio">
+                <h1><i class="fa fa-code"></i> Websites <small>I have worked on</small></h1>
 
-            <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-        </div>
-    </section>
-    <section id="contact">
-        <h1><i class="fa fa-phone"></i> Contact</h1>
 
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    <input type="text" class="form-control" id="inputName" placeholder="Enter name"/>
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators well well-sm">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="/img/screenshots/acsfoundation.png" alt="ACS Foundation">
+                            <div class="carousel-caption well">
+                                <h3>
+                                    ACS Foundation 
+                                    <br /> 
+                                    <a href="http://www.acsfoundation.com.au/" target="_blank">www.acsfoundation.com.au</a>
+                                </h3>
+                                
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/img/screenshots/cbdstorage.png" alt="CBD Storage">
+                            <div class="carousel-caption well">
+                                <h3>
+                                    CBD Storage
+                                    <br /> 
+                                    <a href="http://www.cbdstorage.com.au/" target="_blank">www.cbdstorage.com.au</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/img/screenshots/sydneystoragelockers.png" alt="Sydney Storage Lockers">
+                            <div class="carousel-caption well">
+                                <h3>
+                                    Sydney Storage Lockers
+                                    <br /> 
+                                    <a href="http://www.sydneystoragelockers.com.au/" target="_blank">www.sydneystoragelockers.com.au</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/img/screenshots/thebigdayin.png" alt="The BiG Day In">
+                            <div class="carousel-caption well">
+                                <h3>
+                                    The BiG Day In
+                                    <br /> 
+                                    <a href="http://www.thebigdayin.com.au/" target="_blank">www.thebigdayin.com.au</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/img/screenshots/documentstoragemanagement.png" alt="Document Storage Management">
+                            <div class="carousel-caption well">
+                                <h3>
+                                    Document Storage Management
+                                    <br /> 
+                                    <a href="http://www.documentstoragemanagement.com.au/" target="_blank">documentstoragemanagement.com.au</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email"/>
+
+
+            </section>
+            <section id="projects">
+                <div class="page-header">
+                    <h1><i class="fa fa-gear fa-spin"></i> Projects <small>I am working on right now</small></h1>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                        <span class="input-group-addon">
+                <div class="jumbotron">
+            
+                    <ul class="media-list">
+                        <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://www.edudemic.com/wp-content/uploads/2013/07/LinkedIn-Logo.jpeg" alt="LinkedIn logo" width="100">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">LinkedIn Spider</h4>
+                                A web crawler in that scrapes public profile data off LinkedIn. Used for HR purposes. I am building it with Python.
+                            </div>
+                        </li>
+                        <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="img/header.png" alt="Killbot Logic header thumbnail image" width="100">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">This Website</h4>
+                                Hope you're impressed with my effort! Served with <a href="http://nodejs.org/" target="_blank">Node.js</a>.
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+            <section id="contact">
+                <h1><i class="fa fa-phone"></i> Contact</h1>
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
                             <i class="fa fa-comments fa-fw"></i>
                         </span>
-                    <textarea class="form-control" rows="3" id="inputMessage" placeholder="Enter message"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success"><i class="fa fa-exclamation fa-spin fa-fw"></i>Submit
-                </button>
-                <button type="reset" class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i>Clear</button>
-            </div>
-        </form>
-    </section>
-</main>
+                            <textarea class="form-control" rows="3" id="inputMessage" placeholder="Enter message"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-exclamation fa-spin fa-fw"></i>Submit
+                        </button>
+                        <button type="reset" class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i>Clear</button>
+                    </div>
+                </form>
+            </section>
+        </main>
 
-<footer>
-    <div class="row">
-        <div class="col-md-8">
+        <footer>
+            <div class="row">
+                <div class="col-md-8">
 
 
 
@@ -245,8 +377,7 @@
                         GitHub
                     </a>
 
-                    <a href="http://www.linkedin.com/pub/andy-truong/85/aab/76b" target="_blank"
-                       class="btn btn-primary">
+                    <a href="http://www.linkedin.com/pub/andy-truong/85/aab/76b" target="_blank" class="btn btn-primary">
                         <i class="fa fa-linkedin-square fa-1x fa-fw"></i>
                         LinkedIn
                     </a>
@@ -256,37 +387,53 @@
                     </a>
 
 
+                </div>
+                <div class="col-md-4">
+                    &copy; 1988 - 2014 Killbot Logic
+
+
+                </div>
+            </div>
+
+
+        </footer>
+
+        <div id="side-navbar" class="visible-lg">
+            <ul class="nav nav-pills nav-stacked">
+                <!--<li><a href="#home"><i class="fa fa-home"></i> Home</a>
+                </li>-->
+                <li><a href="#about"><i class="fa fa-bug"></i> About Me</a>
+                </li>
+                <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a>
+                </li>
+                <li><a href="#portfolio"><i class="fa fa-code"></i> Websites</a>
+                </li>
+                <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a>
+                </li>
+                <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+            <div class="back-to-top">
+                <a href="#top" class="btn btn-sm">
+                    Back to top <i class="fa fa-reply fa-1x fa-rotate-90"></i>
+                </a>
+            </div>
+
         </div>
-        <div class="col-md-4">
-            &copy; 1988 - 2014 Killbot Logic
+        <div id="bg" data-0="transform: translate(0px, 0px)" data-end="transform: translate(0, -60px)"></div>
+        <div id="bg-overlay"></div>
 
-
-        </div>
-
+        <script type="text/javascript">
+            (function($) {
+                // Init Skrollr
+                var s = skrollr.init({
+                    render: function(data) {
+                        //Debugging - Log the current scroll position.
+                        //console.log(data.curTop);
+                    }
+                });
+            })(jQuery);;
+        </script>
     </div>
-
-
-</footer>
-<div id="side-navbar">
-    <ul class="nav nav-pills nav-stacked">
-        <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fa fa-bug"></i> About Me</a></li>
-        <li><a href="#cv"><i class="fa fa-wrench"></i> CV</a></li>
-        <li><a href="#portfolio"><i class="fa fa-code"></i> Portfolio</a></li>
-        <li><a href="#projects"><i class="fa fa-gear fa-spin"></i> Projects</a></li>
-        <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
-
-
-    </ul>
-    <div class="back-to-top">
-        <a href="#top" class="btn btn-sm">
-            Back to top <i class="fa fa-reply fa-1x fa-rotate-90"></i>
-        </a>
-    </div>
-
-
-</div>
-
 </body>
-
 </html>

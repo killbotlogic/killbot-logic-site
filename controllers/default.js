@@ -3,12 +3,12 @@ exports.install = function(framework) {
     var self = this;
     
     framework.route('/', view_home);
-    framework.route('/{link}/', view_detail);
+    /*framework.route('/{link}/', view_detail);
     framework.route('/cv/', view_cv);
     framework.route('/portfolio/', view_portfolio);
     framework.route('/projects/', view_projects);
     
-   /* self.sitemap('Home', '/');
+    self.sitemap('Home', '/');
     self.sitemap('CV', '/cv/');
 	self.sitemap('Portfolio', '/portfolio/');
 	self.sitemap('Projects', '/projects/');*/
