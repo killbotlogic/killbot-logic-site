@@ -5,7 +5,6 @@ var os = require('os');
 var webshot = require('webshot');
 var fs = require('fs');
 
-var ip = process.argv[3] || '127.0.0.1';
 var port = Number(process.env.PORT || process.argv[2] || '8000');
 var debug = true;
 
@@ -21,9 +20,10 @@ getScreenShot('documentstoragemanagement');
 
 
 
-framework.run(http, debug, port, ip);
-
-
+if (process.argv[3])
+    framework.run(http, debug, port, process.argv[3]);
+else
+    framework.run(http, debug, port);
 
 function getScreenShot(name) {
     webshot(name + '.com.au', function(err, renderStream) {
