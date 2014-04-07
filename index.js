@@ -23,7 +23,7 @@ getScreenShot('documentstoragemanagement');
 if (process.argv[3])
     framework.run(http, debug, port, process.argv[3]);
 else
-    framework.run(http, debug, port);
+    framework.run(http, debug, port, '0.0.0.0');
 
 function getScreenShot(name) {
     webshot(name + '.com.au', function(err, renderStream) {
