@@ -6,25 +6,25 @@ var webshot = require('webshot');
 var fs = require('fs');
 
 var port = Number(process.env.PORT || process.argv[2] || '8000');
+var ip = process.argv[3] || '0.0.0.0'
+
 var debug = true;
 
 process.argv.forEach(function(val, index, array) {
     console.log(index + ': ' + val);
 });
 
+framework.run(http, debug, port, ip);
+
+
+/*
 getScreenShot('acsfoundation');
 getScreenShot('thebigdayin');
 getScreenShot('cbdstorage');
 getScreenShot('sydneystoragelockers');
 getScreenShot('documentstoragemanagement');
-
-
-
-if (process.argv[3])
-    framework.run(http, debug, port, process.argv[3]);
-else
-    framework.run(http, debug, port, '0.0.0.0');
-
+*/
+/*
 function getScreenShot(name) {
     webshot(name + '.com.au', function(err, renderStream) {
     if(err) {
@@ -39,3 +39,4 @@ function getScreenShot(name) {
     });
 });
 }
+*/

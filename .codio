@@ -4,7 +4,7 @@
 // Run button configuration
     "commands": {
         "Node version": "node --version",
-        "Run": "node index.js 8000 '0.0.0.0'"
+        "Run": "node app.js 8000 '0.0.0.0'"
     },
 
 // Preview button configuration

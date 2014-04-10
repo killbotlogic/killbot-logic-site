@@ -1,0 +1,97 @@
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background: #000 url("/img/background.jpg") 50% 0 no-repeat;
+    background-size: 100% auto;
+}
+#bg-overlay {
+    position: fixed;
+    height: 450px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #1A0017 87%);
+}
+html {
+    background: white;
+}
+body {
+    background: url('/img/grass-w.png') center bottom repeat-x;
+    /*-webkit-animation: slide 10s linear infinite;
+    -moz-animation: slide 10s linear infinite;
+    animation: slide 10s linear infinite;*/
+    font-size: 18px;
+    font-weight: 400;
+}
+header, main, footer {
+    margin: 0 auto;
+    width: 1069px;
+    /* width of content */
+    padding-left: 300px;
+    overflow: hidden;
+}
+header {
+    min-height: 391px;
+    position: relative;
+    background-image: url('/img/header-w.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+header > nav {
+    position: absolute;
+    bottom: 0;
+}
+main {
+    background-image: url('/img/blood-w.png');
+    background-repeat: repeat-y;
+    background-position: left bottom;
+    margin-bottom: -200px;
+    /* height of footer */
+    padding-bottom: 200px;
+    /* height of footer */
+}
+footer#footer {
+    min-height: 200px;
+    /* height of footer */
+    padding-top: 10px;
+}
+#home, #cv, #portfolio, #projects, #contact {
+}
+#side-navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+}
+@-webkit-keyframes slide {
+    0% {
+        background-position: 0 bottom;
+    }
+    100% {
+        background-position: 307px bottom;
+    }
+}
+@-moz-keyframes slide {
+    0% {
+        background-position: 0 bottom;
+    }
+    100% {
+        background-position: 307px bottom;
+    }
+}
+@keyframes slide {
+    0% {
+        background-position: 0 bottom;
+    }
+    100% {
+        background-position: 307px bottom;
+    }
+}
+.jumbotron {
+    background-color: black;
+}
