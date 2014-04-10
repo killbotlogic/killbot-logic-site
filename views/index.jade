@@ -1,148 +1,148 @@
 extends layout
 
-section#home
-h1
-i.fa.fa-home
-| Home
-
-
-section#about
-h1
-i.fa.fa-bug
-| About Me
-.jumbotron
-p
-i.fa.fa-quote-left.pull-left
-| Hi my name is Andy Truong and I like to make stuff that sometimes work. If I had all the time in the world I would resynthesize the proofs of all the mathematical equations that model our world. That is the kind of person I am,
-b an adrenaline junkie!
-| I am currently completing my
-b Bachelors in Software Engineering
-| at the
-b University of Technology, Sydney
-| .
-i.fa.fa-quote-right.pull-right
-dl.dl-horizontal
-dt
-i.fa.fa-envelope
-| Email:
-dd
-| iamnumber42
-i.fa.fa-bolt
-| killbotlogic.com
-dt
-i.fa.fa-phone
-| Phone:
-dd 0466 489 205
-p
-a.btn.btn-primary.btn-lg(role='button', href='#cv') Learn more
-section#cv
-h1
-i.fa.fa-wrench
-| CV
-p
-| @{download('CV - Public.docx', 'Download CV', 'Andy Truong CV', 'btn btn-primary btn-lg')}
-p
-| @{download('Online Student Record.pdf', 'Download Academic Transcript', 'Andy Truong Academic Transcript', 'btn btn-primary btn-lg')}
-section#portfolio
-h1
-i.fa.fa-code
-| Websites
-small I have worked on
-#carousel-example-generic.carousel.slide(data-ride='carousel')
-// Indicators 
-ol.carousel-indicators.well.well-sm
-li.active(data-target='#carousel-example-generic', data-slide-to='0')
-li(data-target='#carousel-example-generic', data-slide-to='1')
-li(data-target='#carousel-example-generic', data-slide-to='2')
-li(data-target='#carousel-example-generic', data-slide-to='3')
-li(data-target='#carousel-example-generic', data-slide-to='4')
-// Wrapper for slides 
-.carousel-inner
-.item.active
-img(src='img/screenshots/acsfoundation.png', alt='ACS Foundation')
-.carousel-caption.well
-h3
-a(href='http://www.acsfoundation.com.au/', target='_blank') ACS Foundation
-br
-br
-.item
-img(src='img/screenshots/cbdstorage.png', alt='CBD Storage')
-.carousel-caption.well
-h3
-a(href='http://www.cbdstorage.com.au/', target='_blank') CBD Storage
-br
-br
-.item
-img(src='img/screenshots/sydneystoragelockers.png', alt='Sydney Storage Lockers')
-.carousel-caption.well
-h3
-a(href='http://www.sydneystoragelockers.com.au/', target='_blank') Sydney Storage Lockers
-br
-br
-.item
-img(src='img/screenshots/thebigdayin.png', alt='The BiG Day In')
-.carousel-caption.well
-h3
-a(href='http://www.thebigdayin.com.au/', target='_blank') The BiG Day In
-br
-br
-.item
-img(src='img/screenshots/documentstoragemanagement.png', alt='Document Storage Management')
-.carousel-caption.well
-h3
-a(href='http://www.documentstoragemanagement.com.au/', target='_blank') Document Storage Management
-br
-br
-// Controls 
-a.left.carousel-control(href='#carousel-example-generic', data-slide='prev')
-span.glyphicon.glyphicon-chevron-left
-a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
-span.glyphicon.glyphicon-chevron-right
-section#projects
-.page-header
-h1
-i.fa.fa-gear.fa-spin
-| Projects
-small I am working on right now
-.jumbotron
-ul.media-list
-li.media
-a.pull-left(href='#')
-img.media-object(src='http://www.edudemic.com/wp-content/uploads/2013/07/LinkedIn-Logo.jpeg', alt='LinkedIn logo', width='100')
-h4.media-heading LinkedIn Spider
-| A web crawler in that scrapes public profile data off LinkedIn. Used for HR purposes. I am building it with Python.
-li.media
-a.pull-left(href='#')
-img.media-object(src='img/header-w.png', alt='Killbot Logic header thumbnail image', width='100')
-.media-body
-h4.media-heading This Website
-| Hope you're impressed with my effort! Served with
-a(href='http://nodejs.org/', target='_blank') Node.js
-| .
-section#contact
-h1
-i.fa.fa-phone
-| Contact
-form.form-horizontal(role='form')
-.form-group
-.input-group
-span.input-group-addon
-i.fa.fa-user.fa-fw
-input#inputName.form-control(type='text', placeholder='Name')
-.form-group
-.input-group
-span.input-group-addon
-i.fa.fa-envelope.fa-fw
-input#inputEmail.form-control(type='email', placeholder='Email')
-.form-group
-.input-group
-span.input-group-addon
-i.fa.fa-comments.fa-fw
-textarea#inputMessage.form-control(rows='3', placeholder='Message')
-.form-group
-button.btn.btn-success(type='submit')
-i.fa.fa-exclamation.fa-spin.fa-fw
-| Submit
-button.btn.btn-danger(type='reset')
-i.fa.fa-trash-o.fa-fw
-| Clear
+block content
+    section#home
+        h1
+            i.fa.fa-home
+            | Home
+        section#about
+        h1
+            i.fa.fa-bug
+            | About Me
+        .jumbotron
+            p
+                i.fa.fa-quote-left.pull-left
+                | Hi my name is Andy Truong and I like to make stuff that sometimes work. If I had all the time in the world I would resynthesize the proofs of all the mathematical equations that model our world. That is the kind of person I am,
+                b an adrenaline junkie!
+                | I am currently completing my
+                b Bachelors in Software Engineering
+                | at the
+                b University of Technology, Sydney
+                | .
+                i.fa.fa-quote-right.pull-right
+            dl.dl-horizontal
+                dt
+                    i.fa.fa-envelope
+                    | Email:
+                dd
+                    | iamnumber42
+                    i.fa.fa-bolt
+                    | killbotlogic.com
+                dt
+                    i.fa.fa-phone
+                    | Phone:
+                dd 0466 489 205
+            p
+                a.btn.btn-primary.btn-lg(role='button', href='#cv') Learn more
+    section#cv
+        h1
+            i.fa.fa-wrench
+            | CV
+        p
+            a.btn.btn-primary.btn-lg(role='button', href='/download/CV - Public.docx', alt='Andy Truong CV', target='_blank') Download CV
+        p
+            a.btn.btn-primary.btn-lg(role='button', href='/download/Online Student Record.pdf', alt='Andy Truong Academic Transcript', target='_blank') Download Academic Transcript
+    section#portfolio
+        h1
+            i.fa.fa-code
+            | Websites
+            small I have worked on
+        #carousel-example-generic.carousel.slide(data-ride='carousel')
+            // Indicators
+            ol.carousel-indicators.well.well-sm
+                li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                li(data-target='#carousel-example-generic', data-slide-to='1')
+                li(data-target='#carousel-example-generic', data-slide-to='2')
+                li(data-target='#carousel-example-generic', data-slide-to='3')
+                li(data-target='#carousel-example-generic', data-slide-to='4')
+            // Wrapper for slides
+            .carousel-inner
+                .item.active
+                    img(src='img/screenshots/acsfoundation.png', alt='ACS Foundation')
+                    .carousel-caption.well
+                        h3
+                            a(href='http://www.acsfoundation.com.au/', target='_blank') ACS Foundation
+                            br
+                            br
+                .item
+                    img(src='img/screenshots/cbdstorage.png', alt='CBD Storage')
+                    .carousel-caption.well
+                        h3
+                            a(href='http://www.cbdstorage.com.au/', target='_blank') CBD Storage
+                            br
+                            br
+                .item
+                    img(src='img/screenshots/sydneystoragelockers.png', alt='Sydney Storage Lockers')
+                    .carousel-caption.well
+                        h3
+                            a(href='http://www.sydneystoragelockers.com.au/', target='_blank') Sydney Storage Lockers
+                            br
+                            br
+                .item
+                    img(src='img/screenshots/thebigdayin.png', alt='The BiG Day In')
+                    .carousel-caption.well
+                        h3
+                            a(href='http://www.thebigdayin.com.au/', target='_blank') The BiG Day In
+                            br
+                            br
+                .item
+                    img(src='img/screenshots/documentstoragemanagement.png', alt='Document Storage Management')
+                    .carousel-caption.well
+                        h3
+                            a(href='http://www.documentstoragemanagement.com.au/', target='_blank') Document Storage Management
+                            br
+                            br
+            // Controls
+            a.left.carousel-control(href='#carousel-example-generic', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left
+            a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right
+    section#projects
+        .page-header
+            h1
+                i.fa.fa-gear.fa-spin
+                | Projects
+                small I am working on right now
+        .jumbotron
+            ul.media-list
+                li.media
+                    a.pull-left(href='#')
+                        img.media-object(src='http://www.edudemic.com/wp-content/uploads/2013/07/LinkedIn-Logo.jpeg', alt='LinkedIn logo', width='100')
+                    .media-body
+                        h4.media-heading LinkedIn Spider
+                        | A web crawler in that scrapes public profile data off LinkedIn. Used for HR purposes. I am building it with Python.
+                li.media
+                    a.pull-left(href='#')
+                        img.media-object(src='img/header-w.png', alt='Killbot Logic header thumbnail image', width='100')
+                    .media-body
+                        h4.media-heading This Website
+                        | Hope you're impressed with my effort! Served with
+                        a(href='http://nodejs.org/', target='_blank') Node.js
+                        | .
+    section#contact
+        h1
+            i.fa.fa-phone
+            | Contact
+        form.form-horizontal(role='form')
+            .form-group
+                .input-group
+                    span.input-group-addon
+                        i.fa.fa-user.fa-fw
+                    input#inputName.form-control(type='text', placeholder='Name')
+            .form-group
+                .input-group
+                    span.input-group-addon
+                        i.fa.fa-envelope.fa-fw
+                    input#inputEmail.form-control(type='email', placeholder='Email')
+            .form-group
+                .input-group
+                    span.input-group-addon
+                        i.fa.fa-comments.fa-fw
+                    textarea#inputMessage.form-control(rows='3', placeholder='Message')
+            .form-group
+                button.btn.btn-success(type='submit')
+                    i.fa.fa-exclamation.fa-spin.fa-fw
+                    | Submit
+                button.btn.btn-danger(type='reset')
+                    i.fa.fa-trash-o.fa-fw
+                    | Clear

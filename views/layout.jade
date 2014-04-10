@@ -1,106 +1,106 @@
 doctype
 html
-  head
-    title= title
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=10')
-    meta(name='format-detection', content='telephone=no')
-    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=yes')
-    meta(name='robots', content='all,follow')
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
-    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
-    script(src='/js/skrollr.min.js')
-    link(href='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
-    link(href='//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css', rel='stylesheet')
-    link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', rel='stylesheet')
-    link(href='/css/style.css', rel='stylesheet')
-   
-  body(data-spy='scroll')
-    .container
-      header#top
-        nav#navbar
-          ul.nav.nav-pills
-            li
-              a(href='#home')
-                i.fa.fa-home
-                | Home
-            li
-              a(href='#about')
-                i.fa.fa-bug
-                | About Me
-            li
-              a(href='#cv')
-                i.fa.fa-wrench
-                | CV
-            li
-              a(href='#portfolio')
-                i.fa.fa-code
-                | Websites
-            li
-              a(href='#projects')
-                i.fa.fa-gear.fa-spin
-                | Projects
-            li
-              a(href='#contact')
-                i.fa.fa-phone
-                | Contact
-      main
-        block content
-        
-      footer#footer
-        .row
-          .col-md-8
-            a.btn.btn-primary(href='https://github.com/killbotlogic', target='_blank')
-              i.fa.fa-github.fa-1x.fa-fw
-              | GitHub
-            a.btn.btn-primary(href='http://www.linkedin.com/pub/andy-truong/85/aab/76b', target='_blank')
-              i.fa.fa-linkedin-square.fa-1x.fa-fw
-              | LinkedIn
-            a.btn.btn-primary(href='http://www.facebook.com/killbotlogic', target='_blank')
-              i.fa.fa-facebook-square.fa-1x.fa-fw
-              | FaceBook
-          .col-md-4
-            | &copy; 1988 - 2014 Killbot Logic
-      #side-navbar.visible-lg
-        ul.nav.nav-pills.nav-stacked
-          li
-            a(href='#home')
-              i.fa.fa-home
-              | Home
-          li
-            a(href='#about')
-              i.fa.fa-bug
-              | About Me
-          li
-            a(href='#cv')
-              i.fa.fa-wrench
-              | CV
-          li
-            a(href='#portfolio')
-              i.fa.fa-code
-              | Websites
-          li
-            a(href='#projects')
-              i.fa.fa-gear.fa-spin
-              | Projects
-          li
-            a(href='#contact')
-              i.fa.fa-phone
-              | Contact
-        .navbar-text
-          a.navbar-link(href='#top')
-            i.fa.fa-reply.fa-1x.fa-rotate-90
-            | Back to top
-      #bg(data-0='transform: translate(0px, 0px)', data-end='transform: translate(0, -60px)')
-      #bg-overlay
-      script.
-        (function($) {
-        // Init Skrollr
-        var s = skrollr.init({
-        render: function(data) {
-        //Debugging - Log the current scroll position.
-        //console.log(data.curTop);
-        }
-        });
-        })(jQuery);
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=10')
+        meta(name='format-detection', content='telephone=no')
+        meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=yes')
+        meta(name='robots', content='all,follow')
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
+        script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+        script(src='/js/skrollr.min.js')
+        link(href='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
+        link(href='//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css', rel='stylesheet')
+        link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', rel='stylesheet')
+        link(href='/css/style.css', rel='stylesheet')
+
+    body(data-spy='scroll')
+        .container
+            header#top
+                nav#navbar
+                    ul.nav.nav-pills
+                        li
+                            a(href='#home')
+                                i.fa.fa-home
+                                | Home
+                        li
+                            a(href='#about')
+                                i.fa.fa-bug
+                                | About Me
+                        li
+                            a(href='#cv')
+                                i.fa.fa-wrench
+                                | CV
+                        li
+                            a(href='#portfolio')
+                                i.fa.fa-code
+                                | Websites
+                        li
+                            a(href='#projects')
+                                i.fa.fa-gear.fa-spin
+                                | Projects
+                        li
+                            a(href='#contact')
+                                i.fa.fa-phone
+                                | Contact
+            main
+                block content
+
+            footer#footer
+                .row
+                    .col-md-8
+                        a.btn.btn-primary(href='https://github.com/killbotlogic', target='_blank')
+                            i.fa.fa-github.fa-1x.fa-fw
+                            | GitHub
+                        a.btn.btn-primary(href='http://www.linkedin.com/pub/andy-truong/85/aab/76b', target='_blank')
+                            i.fa.fa-linkedin-square.fa-1x.fa-fw
+                            | LinkedIn
+                        a.btn.btn-primary(href='http://www.facebook.com/killbotlogic', target='_blank')
+                            i.fa.fa-facebook-square.fa-1x.fa-fw
+                            | FaceBook
+                    .col-md-4
+                        | &copy; 1988 - 2014 Killbot Logic
+            #side-navbar.visible-lg
+                ul.nav.nav-pills.nav-stacked
+                    li
+                        a(href='#home')
+                            i.fa.fa-home
+                            | Home
+                    li
+                        a(href='#about')
+                            i.fa.fa-bug
+                            | About Me
+                    li
+                        a(href='#cv')
+                            i.fa.fa-wrench
+                            | CV
+                    li
+                        a(href='#portfolio')
+                            i.fa.fa-code
+                            | Websites
+                    li
+                        a(href='#projects')
+                            i.fa.fa-gear.fa-spin
+                            | Projects
+                    li
+                        a(href='#contact')
+                            i.fa.fa-phone
+                            | Contact
+                .navbar-text
+                    a.navbar-link(href='#top')
+                        i.fa.fa-reply.fa-1x.fa-rotate-90
+                        | Back to top
+            #bg(data-0='transform: translate(0px, 0px)', data-end='transform: translate(0, -60px)')
+            #bg-overlay
+            script.
+                (function($) {
+                // Init Skrollr
+                var s = skrollr.init({
+                render: function(data) {
+                //Debugging - Log the current scroll position.
+                //console.log(data.curTop);
+                }
+                });
+                })(jQuery);

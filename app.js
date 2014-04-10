@@ -9,11 +9,6 @@ var methodOverride = require('method-override');
 var favicon = require('static-favicon');
 var path = require('path');
 
-site = {};
-site.index = function(req, res){
-  res.render('index', { title: 'Killbot Logic' });
-};
-
 var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -25,11 +20,14 @@ app.use(bodyParser());
 app.use(methodOverride()); 	
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 
-app.get('/', site.index);
+app.get('/', function (req, res) {
+    res.render('index', { title: 'Killbot Logic' });
+});
 
 process.argv.forEach(function(val, index, array) {
     console.log(index + ': ' + val);
 });
+
 /*
 app.get('/', function(req, res) {
     res.send('hello world');
