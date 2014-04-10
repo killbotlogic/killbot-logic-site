@@ -8,7 +8,18 @@
     background: #000 url("/img/background.jpg") 50% 0 no-repeat;
     background-size: 100% auto;
 }
-#bg-overlay {
+
+#bg-overlay-top {
+    position: fixed;
+    height: 450px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #1A0017 87%);
+}
+
+#bg-overlay-bottom {
     position: fixed;
     height: 450px;
     bottom: 0;
@@ -17,6 +28,17 @@
     z-index: -1;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #1A0017 87%);
 }
+
+#bg-grass {
+    position: fixed;
+    height: 96px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url('/img/grass-w.png') center bottom repeat-x;
+}
+
 html {
     background: white;
 }

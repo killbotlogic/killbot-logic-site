@@ -20,8 +20,14 @@ app.use(bodyParser());
 app.use(methodOverride()); 	
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 
+
+app.locals.title = 'Killbot Logic';
+app.locals.email = 'iamnumber42@killbotlogic.com';
 app.get('/', function (req, res) {
-    res.render('index', { title: 'Killbot Logic' });
+    res.render('index', { title: app.locals.title });
+});
+app.post('/send_message', function (req, res) {
+    res.send({ message: 'tobi', success: true })
 });
 
 process.argv.forEach(function(val, index, array) {

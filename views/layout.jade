@@ -17,14 +17,15 @@ html
         link(href='/css/style.css', rel='stylesheet')
 
     body(data-spy='scroll')
-        .container
+
+        div.container
             header#top
                 nav#navbar
                     ul.nav.nav-pills
-                        li
-                            a(href='#home')
-                                i.fa.fa-home
-                                | Home
+                        //li
+                        //    a(href='#navbar')
+                        //        i.fa.fa-home
+                        //        | Home
                         li
                             a(href='#about')
                                 i.fa.fa-bug
@@ -46,6 +47,7 @@ html
                                 i.fa.fa-phone
                                 | Contact
             main
+
                 block content
 
             footer#footer
@@ -64,10 +66,10 @@ html
                         | &copy; 1988 - 2014 Killbot Logic
             #side-navbar.visible-lg
                 ul.nav.nav-pills.nav-stacked
-                    li
-                        a(href='#home')
-                            i.fa.fa-home
-                            | Home
+                    //li
+                    //    a(href='#navbar')
+                    //        i.fa.fa-home
+                    //        | Home
                     li
                         a(href='#about')
                             i.fa.fa-bug
@@ -92,15 +94,17 @@ html
                     a.navbar-link(href='#top')
                         i.fa.fa-reply.fa-1x.fa-rotate-90
                         | Back to top
-            #bg(data-0='transform: translate(0px, 0px)', data-end='transform: translate(0, -60px)')
-            #bg-overlay
+            #bg(data-0='transform: translate(0px, 0px)', data-end='transform: translate(0, 60px)')
+            #bg-overlay-top
+            //#bg-overlay-bottom
+            #bg-grass.visible-lg
             script.
-                (function($) {
-                // Init Skrollr
-                var s = skrollr.init({
-                render: function(data) {
-                //Debugging - Log the current scroll position.
-                //console.log(data.curTop);
-                }
+                $(document).ready(function() {
+                    // Init Skrollr
+                    var s = skrollr.init({
+                        render: function(data) {
+                            //Debugging - Log the current scroll position.
+                            //console.log(data.curTop);
+                        }
+                    });
                 });
-                })(jQuery);
