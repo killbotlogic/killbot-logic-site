@@ -164,14 +164,49 @@ block content
                         dataType: 'json' // what type of data do we expect back from the server
                     })
                     .done(function(data, textStatus, jqXHR) {
-                        $('#form-alert').removeClass('hide');
-                        $('#form-alert').text(data.message);
+
+
+                        // log data to the console so we can see
+                        console.log(data);
+
+                        // here we will handle errors and validation messages
+                        if (!data.success) {
+
+                            // handle errors for name ---------------
+                            if (data.errors.name) {
+                                $('input[name=name]').addClass('has-error'); // add the error class to show red input
+                                $('input[name=name]').append('<div class="help-block">' + data.errors.name + '</div>'); // add the actual error message under our input
+                            }
+
+                            // handle errors for email ---------------
+                            if (data.errors.email) {
+                                $('input[name=email]').addClass('has-error'); // add the error class to show red input
+                                $('input[name=email]').append('<div class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
+                            }
+
+                            // handle errors for superhero alias ---------------
+                            if (data.errors.message) {
+                                $('textarea[name=message]').addClass('has-error'); // add the error class to show red input
+                                $('textarea[name=message]').append('<div class="help-block">' + data.errors.superheroAlias + '</div>'); // add the actual error message under our input
+                            }
+
+                        } else {
+                            $('#form-alert').removeClass('hide');
+                            $('#form-alert').text(data.message);
+                            // ALL GOOD! just show the success message!
+                            $('form').append('<div class="alert alert-success">' + data.message + '</div>');
+
+                            // usually after form submission, you'll want to redirect
+                            // window.location = '/thank-you'; // redirect a user to another page
+                            alert('success'); // for now we'll just alert the user
+
+                        }
                     })
                     .fail(function(jqXHR, textStatus, errorThrown) {
                         alert( "error" );
                     })
                     .always(function() {
-                        alert( "complete" );
+                        //alert( "complete" );
                     });
                                 // stop the form from submitting the normal way and refreshing the page
                     event.preventDefault();
