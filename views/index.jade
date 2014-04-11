@@ -121,23 +121,21 @@ block content
             | Contact
 
         form.form-horizontal(role='form')
-            #form-alert.form-group.alert.alert-warning.hide
-                | Better check yourself, you're not looking too good.
             .form-group
                 .input-group
                     span.input-group-addon
                         i.fa.fa-user.fa-fw
-                    input#inputName.form-control(type='text', name='name', placeholder='Name')
+                    input#inputName.form-control(type='text', name='name', placeholder='Name', required='true')
             .form-group
                 .input-group
                     span.input-group-addon
                         i.fa.fa-envelope.fa-fw
-                    input#inputEmail.form-control(type='email', name='email', placeholder='Email')
+                    input#inputEmail.form-control(type='email', name='email', placeholder='Email', required='true')
             .form-group
                 .input-group
                     span.input-group-addon
                         i.fa.fa-comments.fa-fw
-                    textarea#inputMessage.form-control(rows='3', name='message', placeholder='Message')
+                    textarea#inputMessage.form-control(rows='3', name='message', placeholder='Message', required='true')
             .form-group
                 button.btn.btn-success(type='submit')
                     i.fa.fa-exclamation.fa-spin.fa-fw
@@ -191,14 +189,22 @@ block content
                             }
 
                         } else {
-                            $('#form-alert').removeClass('hide');
-                            $('#form-alert').text(data.message);
+           
                             // ALL GOOD! just show the success message!
-                            $('form').append('<div class="alert alert-success">' + data.message + '</div>');
+                            
+                            $('input[name=name]').val('');
+                            $('input[name=email]').val('');
+                            $('textarea[name=message]').val('');
+                            
+                            
+                            var alert = 
+                                '<div class="alert alert-success alert-dismissable form-group">' +
+                                    '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>' +
+                                    '<strong>Success!</strong> ' + data.message +
+                                '</div>';
+                            $('form').prepend(alert);
 
-                            // usually after form submission, you'll want to redirect
-                            // window.location = '/thank-you'; // redirect a user to another page
-                            alert('success'); // for now we'll just alert the user
+                        
 
                         }
                     })

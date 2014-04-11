@@ -43,7 +43,8 @@ html {
     background: white;
 }
 body {
-    background: url('/img/grass-w.png') center bottom repeat-x;
+    /*background: url('/img/grass-w.png') center bottom repeat-x;*/
+    background: none;
     /*-webkit-animation: slide 10s linear infinite;
     -moz-animation: slide 10s linear infinite;
     animation: slide 10s linear infinite;*/
@@ -116,4 +117,9 @@ footer#footer {
 }
 .jumbotron {
     background-color: black;
+}
+
+/* hack from the bowels of hell */
+.alert-dismissable .close {
+    right: 0px;
 }

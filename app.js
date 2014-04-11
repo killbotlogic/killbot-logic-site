@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var favicon = require('static-favicon');
+var POSTMARK_KEY = process.env.POSTMARK_API_KEY;
+var postmark = require("postmark")(POSTMARK_KEY)
 var path = require('path');
 
 var app = express();
@@ -27,7 +29,23 @@ app.get('/', function (req, res) {
     res.render('index', { title: app.locals.title });
 });
 app.post('/send_message', function (req, res) {
-    res.send({ message: 'tobi', success: true })
+    
+    
+    postmark.send({
+        "From": app.locals.email, 
+        "To": app.locals.email, 
+        "Subject": "Killbot Logic site enquiry from (" + req.body.email + ": " + req.body.name + ")", 
+        "TextBody": req.body.message,
+        "Tag": "killbot-logic-site"
+    }, function (err, to) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("Email sent to: %s", to);
+    });
+    console.log(req);
+    res.send({ message: 'Your message has been sent. Expect a reply soon.', success: true });
 });
 
 process.argv.forEach(function(val, index, array) {
