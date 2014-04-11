@@ -19,7 +19,8 @@
         "method-override": "*",
         "connect-timeout": "*",
         "vhost": "*",
-        "csurf": "*"
+        "csurf": "*",
+        "postmark": "*"
     },
     "devDependencies": {},
     "scripts": {
