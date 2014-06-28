@@ -20,7 +20,8 @@
         "connect-timeout": "*",
         "vhost": "*",
         "csurf": "*",
-        "postmark": "*"
+        "postmark": "*",
+        "feedparser": "*"
     },
     "devDependencies": {},
     "scripts": {

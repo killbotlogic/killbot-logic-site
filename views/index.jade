@@ -6,19 +6,22 @@ block content
             i.fa.fa-bug
             |  About Me
         .jumbotron
-            p
-                i.fa.fa-quote-left.pull-left
-                | Hi my name is Andy Truong and I like to make stuff that sometimes works. 
+            p.
+                <i class="fa fa-quote-left pull-left"></i> 
+                
+                Hi my name is Andy Truong and I like to make stuff that sometimes works. 
                 If I had all the time in the world I would resynthesize the proofs of all 
-                the mathematical equations that model our world. 
-                That is the kind of person I am,
-                b  an adrenaline junkie!
-                |  I am currently completing my
-                b  Bachelors in Software Engineering
-                |  at the
-                b  University of Technology, Sydney
-                | .
-                i.fa.fa-quote-right.pull-right
+                the mathematical equations that define our world. Or something like that.
+                Like eating cake. A cake made out of cheese and it will be delicious. 
+                <i class="fa fa-quote-right pull-right"></i>
+            p.
+                <i class="fa fa-quote-left pull-left"></i> 
+                I am currently completing my
+                <b>Bachelors in Software Engineering</b>
+                at the
+                <b>University of Technology, Sydney</b>.
+                <i class="fa fa-quote-right pull-right"></i>
+       
             dl.dl-horizontal
                 dt
                     i.fa.fa-envelope
@@ -43,9 +46,7 @@ block content
             a.btn.btn-primary.btn-lg(role='button', href='/download/Online Student Record.pdf', alt='Andy Truong Academic Transcript', target='_blank') Download Academic Transcript
     section#portfolio
         h1
-            i.fa.fa-code
-            |  Websites
-            small  I have worked on
+            <i class="fa fa-code"></i> Portfolio <small>things</small>
         #carousel-example-generic.carousel.slide(data-ride='carousel')
             // Indicators
             ol.carousel-indicators.well.well-sm
@@ -98,26 +99,16 @@ block content
                 span.glyphicon.glyphicon-chevron-right
     section#projects
         .page-header
-            h1
-                i.fa.fa-gear.fa-spin
-                |  Projects
-                small  I am working on right now
-        .jumbotron
-            ul.media-list
-                li.media
-                    a.pull-left(href='#')
-                        img.media-object(src='http://www.edudemic.com/wp-content/uploads/2013/07/LinkedIn-Logo.jpeg', alt='LinkedIn logo', width='100')
-                    .media-body
-                        h4.media-heading LinkedIn Spider
-                        | A web crawler in that scrapes public profile data off LinkedIn. Used for HR purposes. I am building it with Python.
-                li.media
-                    a.pull-left(href='#')
-                        img.media-object(src='img/header-w.png', alt='Killbot Logic header thumbnail image', width='100')
-                    .media-body
-                        h4.media-heading This Website
-                        | Hope you're impressed with my effort! Served with
-                        a(href='http://nodejs.org/', target='_blank')  Node.js
-                        | .
+            h1.
+                <i class="fa fa-gear fa-spin"></i>
+                My Blog
+                <small>things I am doing with my spare time</small>
+        for post in blogPosts
+            .jumbotron.blog-post
+                h2
+                    a(href='#{post.link}') #{post.title}
+                    small  #{post.date}
+                div !{post.description}
     section#contact
         h1
             i.fa.fa-phone

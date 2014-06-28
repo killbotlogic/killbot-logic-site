@@ -2,7 +2,7 @@ exports.install = function(framework) {
     
     var self = this;
     
-    framework.route('/', view_home);
+    //framework.route('/', view_home);
     /*framework.route('/{link}/', view_detail);
     framework.route('/cv/', view_cv);
     framework.route('/portfolio/', view_portfolio);
