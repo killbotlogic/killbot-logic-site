@@ -77,6 +77,8 @@ main {
     /* height of footer */
     padding-bottom: 200px;
     /* height of footer */
+    
+    padding-right: 20px;
 }
 footer#footer {
     min-height: 200px;
