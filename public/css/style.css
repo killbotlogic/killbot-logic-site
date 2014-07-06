@@ -84,6 +84,14 @@ footer#footer {
     min-height: 200px;
     /* height of footer */
     padding-top: 10px;
+    text-align: center;
+}
+#footer a.social {
+    padding: 10px;
+    color: white;
+}
+#footer a.social > span {
+    vertical-align: super;
 }
 #home, #cv, #portfolio, #projects, #contact {
 }
