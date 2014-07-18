@@ -18,6 +18,9 @@ html
         link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', rel='stylesheet')
         link(href='/css/style.css', rel='stylesheet')
         
+        link(href='//fonts.googleapis.com/css?family=Special+Elite:400,400italic,700,700italic|Bangers:400|Permanent+Marker:400|Limelight:400&subset=latin,latin-ext', rel='stylesheet')
+
+        
     body(data-spy='scroll')
         a.visible-lg(href='https://github.com/killbotlogic')
             img(style='position: absolute; top: 0; right: 0; border: 0;',
@@ -30,7 +33,7 @@ html
                 nav#navbar
                     ul.nav.nav-pills
                         li
-                            a(href='#')
+                            a(href='#').home-nav-link
                                 i.fa.fa-play-circle-o
                                 |  Killbot Logic
                         li
@@ -79,7 +82,7 @@ html
             #side-navbar.visible-lg
                 ul.nav.nav-pills.nav-stacked
                     li
-                        a(href='#')
+                        a(href='#').home-nav-link
                             i.fa.fa-play-circle-o
                             |  Killbot Logic
                     li

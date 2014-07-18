@@ -41,8 +41,11 @@
 
 html {
     background: white;
+    
 }
 body {
+    font-family: 'Special Elite';
+    
     /*background: url('/img/grass-w.png') center bottom repeat-x;*/
     background: none;
     /*-webkit-animation: slide 10s linear infinite;
@@ -69,6 +72,16 @@ header > nav {
     position: absolute;
     bottom: 0;
 }
+.home-nav-link {
+    font-family: 'Bangers';
+}
+h1, .btn {
+    font-family: 'Permanent Marker';
+}
+h1 > small {
+    font-family: 'Bangers';
+}
+
 main {
     background-image: url('/img/blood-w.png');
     background-repeat: repeat-y;
